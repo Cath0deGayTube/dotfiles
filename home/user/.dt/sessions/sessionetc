@@ -1,0 +1,3 @@
+nitrogen --restore &
+picom --backend xrender &
+xbindkeys &

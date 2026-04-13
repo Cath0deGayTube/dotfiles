@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=CDE Panel
+Comment=CDE Panel for XFCE
+Exec=cdepanel
+TryExec=cdepanel
+Icon=cdepanel
+Categories=GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+StartupNotify=false
+Terminal=false
+NoDisplay=false
+X-XFCE-Autostart-Phase=Panel
+X-XFCE-Autostart-Notify=true
+X-XFCE-Autostart-Delay=5
+X-XFCE-Autostart-enabled=true

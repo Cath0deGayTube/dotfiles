@@ -1,0 +1,17 @@
+! dtsession.db
+!
+.version: DtSession
+.dtsessionID: 1.0
+!
+ProxyClient.PC0: PC0
+PC0.Command.0: dtpad
+PC0.Command.1: -server
+PC0.ScreenNum: 0
+!
+ProxyClient.PC1: PC1
+PC1.Command.0: nitrogen
+PC1.ScreenNum: 0
+!
+ProxyClient.PC2: PC2
+PC2.Command.0: wmbattery
+PC2.ScreenNum: 0

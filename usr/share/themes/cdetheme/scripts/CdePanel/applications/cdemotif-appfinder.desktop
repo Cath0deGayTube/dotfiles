@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CDE/Motif Appfinder
+Exec=xfce4-appfinder
+Icon=cdemotif-appfinder
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

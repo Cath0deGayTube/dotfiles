@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CDE/Motif Calendar
+Exec=gsimplecal
+Icon=cdemotif-calendar
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Office;Calendar;

@@ -1,0 +1,74 @@
+###############################
+#      Programs and menus     #
+###############################
+
+# rofi Program menu
+"rofi -show drun"
+	Mod4 + space
+
+# rofi run dialogue
+"rofi -show run"
+	Mod4 + r
+
+# Terminal
+"$TERMINAL"
+	Mod4 + Return
+"$TERMINAL"
+	Mod4 + t
+
+# Editor
+"editor"
+  Mod4 + Shift + t
+
+# File manager
+"$FM"
+	Mod4 + e
+
+# More advanced file manager
+"$ADVFM"
+	Mod4 + Shift + e
+
+# Web browser
+"$BROWSER"
+  Mod4 + w
+
+
+###############################
+#          Keybinds           #
+###############################
+
+# Reload keybinds
+"pkill xbindkeys; xbindkeys"
+	Mod4 + Shift + r
+
+# Close Window
+"xdotool getwindowfocus windowclose"
+  Mod4 + q
+
+# Screenshot and copy to clipboard
+"flameshot full -c"
+	Mod1 + Print
+
+# Screenshot GUI
+"flameshot gui"
+	Mod4 + Shift + S
+
+# Brightness
+"brightnessctl s +10%"
+	XF86MonBrightnessUp
+
+"brightnessctl s 10%-"
+	XF86MonBrightnessDown
+
+# Volume
+"amixer set Master 5%+"
+	XF86AudioRaiseVolume
+
+"amixer set Master 5%-"
+	XF86AudioLowerVolume
+
+"amixer set Master toggle"
+	XF86AudioMute
+
+"amixer set Capture toggle"
+	XF86AudioMicMute

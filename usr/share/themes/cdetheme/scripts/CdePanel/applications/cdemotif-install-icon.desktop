@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Install Icon
+Exec=xfce4-appfinder
+Icon=cdemotif-install-icon
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

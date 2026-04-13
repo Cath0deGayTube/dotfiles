@@ -1,0 +1,6 @@
+Dtsession*ShutDownState:	1
+Dtsession*Interval:	180
+Dtsession*Timeout:	600
+Dtsession*AllowExp:	0
+Dtsession*PreferBlank:	0
+Dtsession*ShutDownMode:	3

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=TWM
+DesktopNames=TWM
+Comment=Use this session to boot into the classic TWM window manager
+Keywords=TWM Tom Tab Window Manager
+Exec=/etc/xinitrc.d/twm/twm
+Type=Application

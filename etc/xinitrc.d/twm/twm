@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Call autostart
+/etc/xinitrc.d/common/autostart
+
+# run window manager
+exec twm

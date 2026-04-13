@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDE Theme
+Comment=An elegant theme from a more civilized age
+
+[X-GNOME-Metatheme]
+GtkTheme=CDE Theme
+IconTheme=NsCDE
+CursorTheme=default

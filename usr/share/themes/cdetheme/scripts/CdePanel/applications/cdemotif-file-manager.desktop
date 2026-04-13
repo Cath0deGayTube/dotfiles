@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CDE/Motif File Manager
+Exec=thunar
+Icon=cdemotif-file-manager
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

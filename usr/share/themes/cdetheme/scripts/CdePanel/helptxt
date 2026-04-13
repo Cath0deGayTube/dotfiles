@@ -1,0 +1,80 @@
+Cdetheme 1.4.2 - December 2022
+
+Cde front panel and gtk/qt/xfce theme. Mainly meant to use with
+xfce4.  Logged in to an xfce session, run 
+
+./startpanel
+
+to install the theme  on first run and start the front panel. 
+
+The cdepanel and gtk/qt themes all use older python and pyqt
+versions so they won't run on most current systems. Needs a
+rewrite, but for now I packaged everything in a pyinstaller
+executable. This creates its own environment, with the old
+dependencies installed inside. I tested it on the current Linux
+Mint, MX, Debian stable and sid, Open Suse Leap, Fedora, Xubuntu
+and Sparky, all with Xfce installed. Please do not use 'minimal
+xfce install', that won't work.
+
+The scripts do rely on some external helper programs, most are
+already installed on the average distribution with xfce.  These
+ones you also need:
+
+imagemagick, gtk2 pixmap engine, qt5ct, qt5 gtk2 platform theme,
+qt5 style plugins, gtk-launch, orage, ... and what not
+
+Everything still needs work, but yes I thought just put out this
+one that works on the newer distributions... 
+
+USAGE:
+
+Configuration of the cdepanel app can mostly be done by right
+click on the panel. Different options will be shown when clicking
+on a launcher (icon), drawer, or side handle. 
+
+Apps can be added to the panel and drawers using drag and drop.
+One can drag icons over from the xfce4-appfinder or whisker menu
+to the panel or open drawer. But one can also drag icons from an
+open drawer to the panel or vice versa, or from one position in
+the panel to another.
+
+Colors, backdrops and window borders can be changed  in the
+'Settings' dialog (right-click panel). More advanced settings can
+be made by editing the config file (see 'Advanced' tab in the
+settings dialog). Edit at your own risk! 
+
+Keys and mouse on panel:
+
+mousewheel:				Switch workspace
+=/-, ctrl-mousewheel:	Larger/smaller size
+h/H, shift-mousewheel:	More/less sharpness
+p/P:		Cycle back/forth through color palettes 
+s/S:		More/less saturated colors in panel
+c:			Pop up config dialog
+r:			Save layout (after moving buttons etc)
+n:			Toggle between 4 and 8 colors mode
+esc:		Close all drawers
+ctrl-c:		Exit program
+ctrl-r: 	Restart
+0: 			Resize panel to unscaled 'original' size
+
+Mousewheel over pavucontrol icon: change speaker volume.
+Mouse at bottom of the screen raises the panel window above all
+others.
+
+
+ADDITIONAL:
+
+If you want to get rid of the new client side decorations windows
+and draw normal Motif style window decorations always, please 
+
+sudo apt install gtk3-nocsd
+
+and set 
+
+  export GTK_CSD=0
+  export LD_PRELOAD=<"full path" of your libgtk3-nocsd.so.0 file>
+
+in your .bashrc. I'm looking for a better solution for this, 
+but yes...
+

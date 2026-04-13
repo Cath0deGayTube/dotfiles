@@ -1,0 +1,6 @@
+
+@theme "/usr/share/rofi/themes/Indego.rasi"
+
+configuration {
+  kb-cancel: ['Escape', 'Super_L'];
+}

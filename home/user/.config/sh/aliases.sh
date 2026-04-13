@@ -1,0 +1,47 @@
+# misc
+alias edit='editor'
+alias v='edit'
+alias s='sudo'
+alias suod='sudo'
+alias rg='rg -p'
+alias cls='clear'
+alias lear='clear'
+alias claer='clear'
+alias claera='clear'
+alias cleara='clear'
+alias clara='clear'
+alias caer='clear'
+alias clare='clear'
+alias del='rm'
+alias deltree='rm -R'
+alias move='mv'
+alias ren='mv'
+alias md='mkdir'
+alias rd='rmdir'
+alias xcopy='cp -r'
+alias copy='cp'
+
+# Faster movement
+alias cd..='cd ..'
+alias ..='cd ..'
+alias .2='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# ls stuff
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -l'
+
+alias commit='git add . && git commit -m $1'
+alias push='git push -u origin main'
+
+alias yay='yay --color=auto'
+alias grep='grep --color=auto'
+alias upd='yay -Syu'
+# Silly
+alias please='sudo'
+alias fucking='sudo'
+alias fuck='sudo !!'
+alias ultrakill='pkill'

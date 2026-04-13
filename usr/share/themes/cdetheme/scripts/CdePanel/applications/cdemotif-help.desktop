@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CDE/Motif Help
+Exec=xdg-open www.opendesktop.org/p/1231025  
+Icon=cdemotif-help
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

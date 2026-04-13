@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Script adds xhost +si:localuser:yourownusername
+#
+#Updated for Python 3 compatibility
+#Updated for ARM and Termux support
+#
+script=$(readlink -f "$0")
+scriptpath=$(dirname "$script")
+
+ARCH=$(uname -m)
+IS_TERMUX=false
+if [ -d "/data/data/com.termux" ]; then
+    IS_TERMUX=true
+fi
+
+echo "Detected architecture: $ARCH"
+echo "Termux environment: $IS_TERMUX"
+
+# Termux:X11 - ensure DISPLAY is set
+if [ "$IS_TERMUX" = true ]; then
+    if [ -z "$DISPLAY" ]; then
+        export DISPLAY=:1
+        echo "Termux detected: DISPLAY not set, defaulting to :1"
+    fi
+    echo "DISPLAY=$DISPLAY"
+fi
+
+echo "Trying to set xhost for localuser $USER"
+xhost +si:localuser:$USER
+
+echo "Starting cdepanel in $scriptpath"
+
+run_from_source() {
+    echo "Running from Python source..."
+    export PYTHONPATH="$scriptpath/scripts:$PYTHONPATH"
+    cd "$scriptpath/scripts"
+    python3 "$scriptpath/scripts/cdepanel.py"
+}
+
+should_run_source() {
+    if [ "${CDEPANEL_PREFER_SOURCE:-0}" = "1" ]; then
+        return 0
+    fi
+    if [ ! -x "$scriptpath/cdepanel" ]; then
+        return 0
+    fi
+    if find "$scriptpath/scripts" -type f \( -name "*.py" -o -name "*.desktop" -o -name "*.png" -o -name "*.xpm" \) -newer "$scriptpath/cdepanel" -print -quit | grep -q .; then
+        return 0
+    fi
+    return 1
+}
+
+if [ "$ARCH" = "x86_64" ] && [ -x "$scriptpath/cdepanel" ]; then
+    if should_run_source; then
+        echo "Source tree is newer than bundled binary, running from Python source..."
+        run_from_source
+    else
+        $scriptpath/cdepanel
+        exitcode=$?
+        if [ $exitcode -ne 0 ]; then
+            echo "Binary exited with code $exitcode, falling back to Python source..."
+            run_from_source
+        fi
+    fi
+else
+    run_from_source
+fi

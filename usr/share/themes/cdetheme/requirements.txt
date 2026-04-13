@@ -1,0 +1,32 @@
+# Python 3 Dependencies for CDE Theme Package
+#
+# On Termux (Android/ARM): Do NOT pip install PyQt5 or Pillow.
+# There are no pip wheels for ARM/aarch64. Use Termux pkg instead:
+#   pkg install x11-repo && pkg install pyqt5 python-pillow
+#   pip install pyxdg colors.py python-xlib PyYAML
+#
+# On x86_64 Linux: pip install -r requirements.txt works as-is.
+
+# Core GUI Framework
+# Termux: pkg install pyqt5 (NOT pip)
+PyQt5>=5.15.0
+
+# Image Processing
+# Termux: pkg install python-pillow (NOT pip)
+Pillow>=8.0.0
+
+# Color Utilities (provides 'colors' module with hsv, hex)
+# https://github.com/mattrobenolt/colors.py — latest PyPI version is 0.2.2
+colors.py>=0.2.0
+
+# Desktop Integration
+pyxdg>=0.27
+
+# X11 Integration (Linux)
+python-xlib>=0.31
+
+# Configuration (used by Opts.py)
+PyYAML>=5.4.0
+
+# Optional: systemd notification (try/except in cdepanel.py, not required)
+# systemd-python>=234; sys_platform == "linux"

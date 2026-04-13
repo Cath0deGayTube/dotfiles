@@ -1,0 +1,5 @@
+# yay makepkg cloned by script
+yay-bin/
+
+# CDE source tree cloned by script
+cdesktopenv-code/

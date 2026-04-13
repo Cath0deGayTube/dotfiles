@@ -1,0 +1,9 @@
+[Desktop Entry]
+#desktopentry with this name when run opens settings dialog of panel
+Name=CDE/Motif Settings
+Exec=Please go to CDE/Motif Panel and press the SETTINGS
+Icon=cdemotif-settings
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

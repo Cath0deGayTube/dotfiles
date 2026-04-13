@@ -1,0 +1,5 @@
+SUBPANEL	Mail
+{
+   CONTAINER_NAME	Mail
+   TITLE	Mail
+}

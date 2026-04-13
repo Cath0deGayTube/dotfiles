@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set wallpaper
+nitrogen --restore &
+
+# Widgets
+wmbattery &
+wmsysmon -geometry +62 &
+xclock -geometry 56x56+126+3 &
+
+# Hotkeys
+xbindkeys &
+
+# Picomo
+picom &

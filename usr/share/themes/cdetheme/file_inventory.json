@@ -1,0 +1,543 @@
+{
+  "_metadata": {
+    "description": "File inventory for CDE Theme 1.4.2 Python 3 with ARM support",
+    "date": "2026-03-16",
+    "purpose": "Documents which files are needed vs unnecessary. Can be used to rollback file deletions.",
+    "categories": {
+      "needed": "File is actively used by the current Python 3 version of the theme",
+      "unnecessary": "File is not used and can be safely deleted",
+      "keep_reference": "File is not directly executed but is useful as documentation or reference"
+    },
+    "rollback_instructions": "To restore a deleted file, use git checkout or copy from backup. Each unnecessary file entry includes its size_bytes and relative_path for identification."
+  },
+
+  "root_files": {
+    "needed": [
+      {
+        "relative_path": "startpanel",
+        "size_bytes": 1762,
+        "reason": "Production entry point shell script. Runs from source when scripts are newer or source is preferred; otherwise uses the PyInstaller binary when available."
+      },
+      {
+        "relative_path": "wsl-cde",
+        "size_bytes": 2665,
+        "reason": "WSL2+VcXsrv testing-only startup script. Not for distribution. Handles DISPLAY detection, forces X11 backend (unsets WAYLAND_DISPLAY), starts XFCE session, kills XFCE panel, launches CDE panel. Ctrl+C kills everything.",
+        "note": "For local WSL2 testing only. The production entry points are startpanel (x86_64) and cdepanel.py (ARM)."
+      },
+      {
+        "relative_path": "cdepanel.spec",
+        "size_bytes": 689,
+        "reason": "PyInstaller spec file for building the cdepanel binary"
+      },
+      {
+        "relative_path": "cdepanel.desktop",
+        "size_bytes": 213,
+        "reason": "Desktop entry file for launching CDE Panel from DE menus"
+      },
+      {
+        "relative_path": "cdetheme.png",
+        "size_bytes": 108508,
+        "reason": "Theme icon/screenshot image"
+      },
+      {
+        "relative_path": "install.py",
+        "size_bytes": 13660,
+        "reason": "Installation script - handles system-wide and user installs on Linux, ARM, and Termux"
+      },
+      {
+        "relative_path": "make_pyinstaller",
+        "size_bytes": 2921,
+        "reason": "Build script for creating PyInstaller binary on x86_64"
+      },
+      {
+        "relative_path": "make_pyinstaller_arm",
+        "size_bytes": 2192,
+        "reason": "Build script for creating PyInstaller binary on ARM"
+      },
+      {
+        "relative_path": "requirements.txt",
+        "size_bytes": 915,
+        "reason": "Python dependency list for pip install"
+      },
+      {
+        "relative_path": "index.theme",
+        "size_bytes": 181,
+        "reason": "GTK/icon theme index file - required by the theme system"
+      },
+      {
+        "relative_path": "README.txt",
+        "size_bytes": 10989,
+        "reason": "Current project documentation covering runtime behavior, fixes, and build/testing instructions."
+      },
+      {
+        "relative_path": "TERMUX_FEASIBILITY_ANALYSIS.md",
+        "size_bytes": 12937,
+        "reason": "Termux feasibility analysis documentation"
+      },
+      {
+        "relative_path": "file_inventory.json",
+        "size_bytes": 0,
+        "reason": "This file. Documents which files are needed vs unnecessary.",
+        "note": "Size is dynamic."
+      },
+      {
+        "relative_path": "gtk-3.0",
+        "size_bytes": 0,
+        "reason": "Symlink/placeholder to gtk-3.16 - needed for theme to appear in gnome-tweak"
+      },
+      {
+        "relative_path": "legacy_readmes/README-AI-Generated",
+        "size_bytes": 9375,
+        "reason": "Reference documentation from Py2-to-Py3 migration process."
+      },
+      {
+        "relative_path": "legacy_readmes/COMPREHENSIVE_BUG_FIX_SUMMARY.md",
+        "size_bytes": 7849,
+        "reason": "Documents the Python 2 to Python 3 migration and syntax error fixes."
+      },
+      {
+        "relative_path": "legacy_readmes/CSTRINGIO_ERROR_PREVENTION.md",
+        "size_bytes": 7300,
+        "reason": "Documents the cStringIO Python 2 to Python 3 migration fix."
+      },
+      {
+        "relative_path": "legacy_readmes/INSTALL.md",
+        "size_bytes": 2944,
+        "reason": "Install guide from Py2-to-Py3 migration."
+      },
+      {
+        "relative_path": "legacy_readmes/readme.old",
+        "size_bytes": 362,
+        "reason": "Old readme from original developer."
+      },
+      {
+        "relative_path": "legacy_readmes/MIGRATION_SUMMARY.md",
+        "size_bytes": 4210,
+        "reason": "Documents the Python 2/PyQt4/GTK2 to Python 3/PyQt5/GTK4 migration."
+      },
+      {
+        "relative_path": "legacy_readmes/readme.txt",
+        "size_bytes": 670,
+        "reason": "Old readme from original developer."
+      },
+      {
+        "relative_path": "legacy_readmes/install.txt",
+        "size_bytes": 5185,
+        "reason": "Old install instructions from original developer."
+      }
+    ],
+    "unnecessary": []
+  },
+
+  "root_directories": {
+    "needed": [
+      {
+        "relative_path": "backdrops/",
+        "item_count": 38,
+        "reason": "CDE backdrop image files (.pm format) - used by ThemeBackdrops.py"
+      },
+      {
+        "relative_path": "gtk-2.0/",
+        "item_count": 34,
+        "reason": "GTK2 theme files - core theme data with img/ references"
+      },
+      {
+        "relative_path": "gtk-3.16/",
+        "item_count": 13,
+        "reason": "GTK3.16 theme CSS and assets"
+      },
+      {
+        "relative_path": "gtk-3.20/",
+        "item_count": 19,
+        "reason": "GTK3.20 theme CSS and assets"
+      },
+      {
+        "relative_path": "gtk-4.0/",
+        "item_count": 7,
+        "reason": "GTK4 theme CSS and assets"
+      },
+      {
+        "relative_path": "img/",
+        "item_count": 25,
+        "reason": "Theme images referenced by GTK2/GTK3 CSS files (arrows, scrollbar elements, etc.)"
+      },
+      {
+        "relative_path": "img2/",
+        "item_count": 4,
+        "reason": "Additional theme images referenced by ColorDialog.py (colorset frames)"
+      },
+      {
+        "relative_path": "palettes/",
+        "item_count": 131,
+        "reason": "CDE color palette files (.dp) - used by MotifColors.py"
+      },
+      {
+        "relative_path": "scripts/",
+        "reason": "Python source code and runtime resources for the active application."
+      },
+      {
+        "relative_path": "xfwm4/",
+        "item_count": 1,
+        "reason": "XFCE window manager decoration images - core theme data"
+      },
+      {
+        "relative_path": "icon_themes/",
+        "reason": "CDE-style freedesktop icon themes. Bundled NsCDE (GPL-3.0, ~7000 icons). Installed to ~/.local/share/icons/ on first run."
+      },
+      {
+        "relative_path": "legacy_readmes/",
+        "item_count": 8,
+        "reason": "Old/obsolete readme and documentation files. Moved here from root and scripts/."
+      }
+    ],
+    "unnecessary": [
+      {
+        "relative_path": ".idea/",
+        "item_count": 0,
+        "reason": "IDE project files. Not needed by the theme.",
+        "category": "ide_files"
+      },
+      {
+        "relative_path": ".venv/",
+        "item_count": 0,
+        "reason": "Python virtual environment. Not needed for distribution.",
+        "category": "dev_environment"
+      }
+    ]
+  },
+
+  "scripts_directory": {
+    "needed_python_modules": {
+      "_description": "Python modules that are imported and executed as part of the running application. Import chain: startpanel -> cdepanel.py -> all others.",
+      "files": [
+        {
+          "relative_path": "scripts/cdepanel.py",
+          "size_bytes": 99135,
+          "reason": "Main application source. Production entry point on ARM (run directly via startpanel). On x86_64 this is compiled into the cdepanel binary via PyInstaller.",
+          "imported_by": ["startpanel"]
+        },
+        {
+          "relative_path": "scripts/cstringio_error_prevention.py",
+          "size_bytes": 5913,
+          "reason": "cStringIO error prevention. Must be imported FIRST in cdepanel.py.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/image_compatibility_layer.py",
+          "size_bytes": 6068,
+          "reason": "Image compatibility layer for PIL/Qt interop.",
+          "imported_by": ["ColorFun.py"]
+        },
+        {
+          "relative_path": "scripts/platform_utils.py",
+          "size_bytes": 3262,
+          "reason": "Platform detection (Termux/ARM) and path utilities.",
+          "imported_by": ["cdepanel.py", "ColorFun.py", "GenDefaultDrawersAndLayout.py"]
+        },
+        {
+          "relative_path": "scripts/Globals.py",
+          "size_bytes": 1716,
+          "reason": "Global variables and state shared across all modules.",
+          "imported_by": ["cdepanel.py", "ColorFun.py", "Theme.py", "ThemeGtk.py", "MotifColors.py", "PicButton.py", "PicButtonCommand.py", "PicButtonToggle.py", "Drawer.py", "WorkspaceFuncs.py", "XfceDecor.py", "ThemeBackdrops.py", "ColorDialog.py", "HelpDialog.py", "GenDefaultDrawersAndLayout.py", "VBox.py"]
+        },
+        {
+          "relative_path": "scripts/ColorFun.py",
+          "size_bytes": 31810,
+          "reason": "Color manipulation and icon lookup functions. Wildcard-imported by cdepanel.py.",
+          "imported_by": ["cdepanel.py", "PicButtonCommand.py", "Drawer.py"]
+        },
+        {
+          "relative_path": "scripts/MiscFun.py",
+          "size_bytes": 2582,
+          "reason": "Shell command execution utilities. Wildcard-imported by many modules.",
+          "imported_by": ["cdepanel.py", "ColorFun.py", "Theme.py", "ThemeGtk.py", "ThemeXfce.py", "ThemeBackdrops.py", "ColorDialog.py", "WorkspaceFuncs.py", "XfceDecor.py"]
+        },
+        {
+          "relative_path": "scripts/JosQPainter.py",
+          "size_bytes": 2423,
+          "reason": "Custom QPainter subclass for drawing operations.",
+          "imported_by": ["cdepanel.py", "ColorFun.py", "PicButton.py", "PicButtonCommand.py", "PicButtonToggle.py"]
+        },
+        {
+          "relative_path": "scripts/Opts.py",
+          "size_bytes": 2631,
+          "reason": "Options/configuration data class.",
+          "imported_by": ["cdepanel.py", "PicButton.py"]
+        },
+        {
+          "relative_path": "scripts/PicButton.py",
+          "size_bytes": 6324,
+          "reason": "Base button widget class for the panel.",
+          "imported_by": ["cdepanel.py", "PicButtonCommand.py", "PicButtonToggle.py", "VBox.py"]
+        },
+        {
+          "relative_path": "scripts/PicButtonCommand.py",
+          "size_bytes": 22967,
+          "reason": "Command-executing button widget (includes PicButtonClock, PicButtonDate).",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/PicButtonToggle.py",
+          "size_bytes": 3997,
+          "reason": "Toggle and workspace button widgets.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/VBox.py",
+          "size_bytes": 4238,
+          "reason": "Vertical box layout container for panel buttons.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/Drawer.py",
+          "size_bytes": 24965,
+          "reason": "Drawer (popup menu) widget for the panel.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/WorkspaceFuncs.py",
+          "size_bytes": 21059,
+          "reason": "Workspace management, process execution, desktop entry launching, and EWMH integration.",
+          "imported_by": ["cdepanel.py", "PicButton.py", "PicButtonCommand.py", "ColorDialog.py", "HelpDialog.py", "ThemeXfce.py"]
+        },
+        {
+          "relative_path": "scripts/ColorDialog.py",
+          "size_bytes": 28029,
+          "reason": "Color picker dialog for theme customization.",
+          "imported_by": ["cdepanel.py", "HelpDialog.py"]
+        },
+        {
+          "relative_path": "scripts/HelpDialog.py",
+          "size_bytes": 5648,
+          "reason": "Help dialog.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/ui_ColorDialog.py",
+          "size_bytes": 25930,
+          "reason": "Auto-generated PyQt UI code for the color dialog.",
+          "imported_by": ["ColorDialog.py"]
+        },
+        {
+          "relative_path": "scripts/ui_Help.py",
+          "size_bytes": 1754,
+          "reason": "Auto-generated PyQt UI code for the help dialog.",
+          "imported_by": ["HelpDialog.py"]
+        },
+        {
+          "relative_path": "scripts/MotifColors.py",
+          "size_bytes": 11933,
+          "reason": "Motif/CDE color scheme generation and sprite-based image creation.",
+          "imported_by": ["cdepanel.py", "ThemeBackdrops.py", "ThemeGtk.py"]
+        },
+        {
+          "relative_path": "scripts/Theme.py",
+          "size_bytes": 3898,
+          "reason": "Main theme orchestrator - detects DE and delegates to specific theme modules.",
+          "imported_by": ["cdepanel.py", "switchtheme"]
+        },
+        {
+          "relative_path": "scripts/BaseTheme.py",
+          "size_bytes": 3838,
+          "reason": "Abstract base class for desktop environment themes.",
+          "imported_by": ["ThemeXfce.py", "ThemeLxqt.py"]
+        },
+        {
+          "relative_path": "scripts/DesktopEnvironment.py",
+          "size_bytes": 3725,
+          "reason": "Desktop environment detection (XFCE, LXQt, etc.).",
+          "imported_by": ["Theme.py"]
+        },
+        {
+          "relative_path": "scripts/ThemeGtk.py",
+          "size_bytes": 10957,
+          "reason": "GTK2/GTK3/GTK4 theme generation (gtkrc, CSS).",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/ThemeXfce.py",
+          "size_bytes": 13979,
+          "reason": "XFCE-specific theming (xfconf-query settings, backdrop style). Passes correct image-style for tiled vs stretched backdrops.",
+          "imported_by": ["DesktopEnvironment.py (conditional)"]
+        },
+        {
+          "relative_path": "scripts/ThemeLxqt.py",
+          "size_bytes": 21778,
+          "reason": "LXQt-specific theming.",
+          "imported_by": ["DesktopEnvironment.py (conditional)"]
+        },
+        {
+          "relative_path": "scripts/ThemeBackdrops.py",
+          "size_bytes": 8419,
+          "reason": "Backdrop/wallpaper management for XFCE. Sets image-style (tiled=2 vs stretched=3) correctly via xfconf-query.",
+          "imported_by": ["ThemeXfce.py"]
+        },
+        {
+          "relative_path": "scripts/ThemeConstants.py",
+          "size_bytes": 1011,
+          "reason": "Shared constants for theme modules.",
+          "imported_by": ["ThemeLxqt.py", "OpenboxTheme.py"]
+        },
+        {
+          "relative_path": "scripts/XfceDecor.py",
+          "size_bytes": 13987,
+          "reason": "XFCE/xfwm4 window decoration image generation.",
+          "imported_by": ["ThemeGtk.py", "ThemeXfce.py", "MotifColors.py"]
+        },
+        {
+          "relative_path": "scripts/OpenboxTheme.py",
+          "size_bytes": 19732,
+          "reason": "Openbox window manager theming for LXQt.",
+          "imported_by": ["ThemeLxqt.py"]
+        },
+        {
+          "relative_path": "scripts/LxqtUtils.py",
+          "size_bytes": 7991,
+          "reason": "LXQt utility functions.",
+          "imported_by": ["ThemeLxqt.py"]
+        },
+        {
+          "relative_path": "scripts/SpritesResourcex.py",
+          "size_bytes": 3612,
+          "reason": "Sprite coordinate data for panel resource images.",
+          "imported_by": ["cdepanel.py"]
+        },
+        {
+          "relative_path": "scripts/SpritesGtk2.py",
+          "size_bytes": 2995,
+          "reason": "Sprite coordinate data for GTK2 theme images.",
+          "imported_by": ["ThemeGtk.py", "MotifColors.py"]
+        },
+        {
+          "relative_path": "scripts/SpritesGtk4.py",
+          "size_bytes": 3075,
+          "reason": "Sprite coordinate data for GTK4 theme images.",
+          "imported_by": ["ThemeGtk.py"]
+        },
+        {
+          "relative_path": "scripts/GenDefaultDrawersAndLayout.py",
+          "size_bytes": 18234,
+          "reason": "Generates default panel layout and drawer menus from system .desktop files. Auto-detects calendar apps for clock/date buttons via xdg-mime and fallback chain.",
+          "imported_by": ["cdepanel.py"]
+        }
+      ]
+    },
+    "needed_non_python_files": [
+      {
+        "relative_path": "scripts/switchtheme",
+        "size_bytes": 3017,
+        "reason": "Standalone script for applying themes without the panel app. Referenced in documentation."
+      },
+      {
+        "relative_path": "scripts/ui_ColorDialog.ui",
+        "size_bytes": 20404,
+        "reason": "Qt Designer UI file - source for ui_ColorDialog.py. Needed if UI needs regeneration."
+      },
+      {
+        "relative_path": "scripts/ui_Help.ui",
+        "size_bytes": 1153,
+        "reason": "Qt Designer UI file - source for ui_Help.py. Needed if UI needs regeneration."
+      },
+      {
+        "relative_path": "scripts/cdepanel.desktop",
+        "size_bytes": 230,
+        "reason": "Desktop entry file for CDE Panel."
+      },
+      {
+        "relative_path": "scripts/cdetheme.png",
+        "size_bytes": 108508,
+        "reason": "Theme icon image, duplicate of root cdetheme.png."
+      }
+    ],
+    "needed_subdirectories": [
+      {
+        "relative_path": "scripts/CdePanel/",
+        "item_count": 58,
+        "reason": "Runtime configuration, layout files, drawer definitions, xpm icons, desktop entries, and default config. Copied to ~/.config/CdePanel on first run.",
+        "notable_files": [
+          "applications/cdemotif-calendar.desktop (gsimplecal launcher for clock/date buttons)",
+          "applications/cdemotif-appfinder.desktop",
+          "applications/cdemotif-file-manager.desktop",
+          "applications/cdemotif-help.desktop",
+          "applications/cdemotif-install-icon.desktop",
+          "applications/cdemotif-printer.desktop",
+          "applications/cdemotif-settings.desktop",
+          "config, config.default, config.backup",
+          "layout, layout.default, layout.backup",
+          "resourcex.png (panel sprite sheet)",
+          "drawers/* (drawer definitions per category)",
+          "xpm/* (CDE motif icons)"
+        ]
+      },
+      {
+        "relative_path": "scripts/ewmh/",
+        "item_count": 4,
+        "reason": "Bundled EWMH library for X window manager interaction. Imported by cdepanel.py and WorkspaceFuncs.py.",
+        "note": "Contains __init__.py, ewmh.py, plus .py2_backup files and __pycache__."
+      }
+    ],
+    "unnecessary": []
+  },
+
+  "summary": {
+    "total_needed_files": {
+      "root_files": 14,
+      "root_directories": 9,
+      "scripts_python_modules": 35,
+      "scripts_non_python_files": 5,
+      "scripts_subdirectories": 2,
+      "total": 65
+    },
+    "total_unnecessary_files": {
+      "root_migration_scripts": 0,
+      "root_py2_to_py3_conversion_docs": 0,
+      "root_developer_personal": 0,
+      "scripts_py2_backups": 0,
+      "scripts_unused_code": 0,
+      "scripts_obsolete_versions": 0,
+      "scripts_migration_tools": 0,
+      "scripts_developer_personal": 0,
+      "scripts_editor_backups": 0,
+      "scripts_cache_dirs": 0,
+      "total": 0
+    },
+    "estimated_space_savings": {
+      "py2_backups_bytes": 0,
+      "root_migration_scripts_bytes": 0,
+      "root_py2_to_py3_conversion_docs_bytes": 0,
+      "scripts_unused_code_bytes": 0,
+      "scripts_misc_bytes": 0,
+      "total_bytes": 0,
+      "total_human_readable": "0 bytes"
+    },
+    "changes_since_last_inventory": {
+      "date_of_last_inventory": "2026-03-16",
+      "new_needed_files": [
+        "wsl-cde (WSL2 startup script)",
+        "scripts/CdePanel/applications/cdemotif-calendar.desktop (gsimplecal launcher)",
+        "file_inventory.json (this file)"
+      ],
+      "newly_discovered_unnecessary_files": [
+        "scripts/config_manager.py (reclassified from borderline to unnecessary)"
+      ],
+      "removed_directories": [
+        "cde_rewrite/ (failed rewrite attempt; verified unused and deleted)",
+        "legacy_files/ (verified unused and deleted)"
+      ],
+      "updated_files": [
+        "cdepanel (removed checked-in binary; must be built locally on the user's system)",
+        "startpanel (1155 -> 1762 bytes, source-preference logic retained and documented)",
+        "README.txt (4396 -> 10989 bytes)",
+        "requirements.txt (645 -> 915 bytes)",
+        "scripts/cdepanel.py (94400 -> 99135 bytes)",
+        "scripts/GenDefaultDrawersAndLayout.py (15855 -> 18234 bytes)",
+        "scripts/ThemeXfce.py (7282 -> 13979 bytes)",
+        "scripts/WorkspaceFuncs.py (20452 -> 21059 bytes)",
+        "scripts/ColorFun.py (30456 -> 31810 bytes)",
+        "scripts/PicButtonCommand.py (18666 -> 22967 bytes)",
+        "scripts/CdePanel/ (43 -> 58 items)",
+        "file_inventory.json (removed deleted legacy_files entries and refreshed summary totals)"
+      ]
+    }
+  }
+}

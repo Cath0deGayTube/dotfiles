@@ -1,0 +1,11 @@
+clock NOAPP NODRAWER
+date /usr/share/applications/xfcalendar.desktop NODRAWER
+launcher ~/.local/share/applications/cdemotif-file-manager.desktop FileManager
+launcher /usr/share/applications/xfce4-terminal.desktop TerminalEmulator
+launcher /usr/share/applications/firefox.desktop Internet
+workspacebuttons /usr/share/applications/firefox.desktop Internet
+launcher ~/.local/share/applications/cdemotif-printer.desktop System
+launcher ~/.local/share/applications/cdemotif-settings.desktop DesktopSettings
+launcher ~/.local/share/applications/cdemotif-appfinder.desktop Utilities
+launcher ~/.local/share/applications/cdemotif-help.desktop Documentation
+launcher /usr/share/applications/pavucontrol.desktop Multimedia

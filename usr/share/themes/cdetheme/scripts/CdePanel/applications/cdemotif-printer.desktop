@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CDE/Motif Printer
+Exec=system-config-printer
+Icon=cdemotif-printer
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;

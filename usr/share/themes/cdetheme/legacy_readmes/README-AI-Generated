@@ -1,0 +1,275 @@
+# CDE Theme - Modern Desktop Environment
+
+## Latest Updates 2025-09-07
+
+### New Features
+- **Reset to Default Button**: Added to Desktop Theme tab for quick restoration of Border width and Title height settings
+- **System Shutdown Detection**: Added graceful shutdown handling for system restarts and power offs
+  - Automatic cleanup of resources on system shutdown/restart
+  - Cross-platform support for Windows and Linux
+  - Systemd integration for Linux systems
+
+### Bug Fixes
+- **Backdrop Settings**: Fixed issue where backdrop changes weren't being applied immediately
+  - Added proper theme update triggers after backdrop changes
+  - Improved backdrop application to current workspace
+
+### Technical Improvements
+- **Signal Handling**: Enhanced signal handling for clean application termination
+- **Logging**: Added comprehensive logging for system events and shutdown procedures
+- **Error Handling**: Improved error handling during system shutdown sequences
+
+## Previous Updates (2025-09-06)
+
+### Performance & Reliability Improvements
+- **Enhanced Caching System**: Added comprehensive caching for theme settings, file operations, and command outputs to improve performance
+- **Optimized File I/O**: Implemented atomic file operations to prevent corruption and ensure data integrity
+- **Reduced Redundant Operations**: Added change detection to skip unnecessary file operations
+
+### Error Handling & Recovery
+- **Graceful Fallbacks**: Added multiple fallback mechanisms for critical operations
+- **Comprehensive Error Logging**: Improved error messages and logging for easier debugging
+- **Automatic Recovery**: Added self-healing capabilities for common failure scenarios
+
+### Desktop Environment Support
+- **XFCE**: Fully supported with complete theming
+- **LXQt**: Supported with Xfwm4 as the window manager
+  - **Window Manager**: Xfwm4 (Xfce Window Manager 4) is the **supported** window manager for LXQt
+  - **Openbox Compatibility**: Limited support - may work but is not guaranteed
+- **Other Environments**: Basic GTK theming may work but is not supported
+
+### User Experience
+- **Faster Theme Switching**: Optimized theme application process
+- **More Reliable**: Better handling of edge cases and error conditions
+- **Improved Resource Management**: Better cleanup of temporary files and resources
+
+## Cdetheme 1.4.2 - December 2022 (Updated for Python 3 and GTK 4.x)
+
+Cde front panel and gtk/qt/xfce theme. Mainly meant to use with
+xfce4.  Logged in to an xfce session, run 
+
+./startpanel
+
+to install the theme  on first run and start the front panel. 
+
+The cdepanel and gtk/qt themes have been updated to use Python 3
+and include GTK 4.x support. The project now includes:
+- Python 3.x compatibility
+- GTK 2.0, 3.16, 3.20, and 4.x theme support
+- Updated PyInstaller configuration for Python 3
+
+Please do not use 'minimal xfce install', that won't work.
+
+## Dependencies
+
+The following packages are required for full functionality:
+
+### Core Dependencies
+- Python 3.6+
+- GTK 2.0, 3.16, 3.20, and 4.x development libraries
+- PyGObject
+
+### Desktop Environment Support
+- **XFCE**: xfce4-panel, xfce4-session, xfconf
+- **LXQt**: lxqt-config, lxqt-panel, xfwm4 (required)
+  - *Note*: Xfwm4 is required as the window manager for LXQt theming
+- **Qt5**: qt5ct, qt5-style-plugins (for Qt application theming)
+
+### Additional Utilities
+- ImageMagick (for image processing)
+- gtk2-engines-pixbuf
+- gtk-launch
+- orage (optional, for calendar functionality)
+
+### Recommended Packages
+- gtk3-nocsd (for better window decorations)
+- qt5-gtk2-platformtheme (for consistent Qt5 theming)
+
+Everything still needs work, but yes I thought just put out this
+one that works on the newer distributions... 
+
+## Installation
+
+### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/cdetheme.git
+cd cdetheme
+
+# Start the panel
+./startpanel
+```
+
+### System-wide Installation
+```bash
+# Install dependencies (Ubuntu/Debian)
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 \
+    python3-pip python3-setuptools python3-wheel \
+    gtk2-engines-pixbuf imagemagick qt5ct \
+    qt5-style-plugins lxqt-config openbox
+
+# Install Python dependencies
+pip3 install -r requirements.txt
+
+# Optional: Install system-wide
+sudo python3 setup.py install
+```
+
+## Usage
+
+Configuration of the cdepanel app can mostly be done by right
+click on the panel. Different options will be shown when clicking
+on a launcher (icon), drawer, or side handle. 
+
+Apps can be added to the panel and drawers using drag and drop.
+One can drag icons over from the xfce4-appfinder or whisker menu
+to the panel or open drawer. But one can also drag icons from an
+open drawer to the panel or vice versa, or from one position in
+the panel to another.
+
+Colors, backdrops and window borders can be changed  in the
+'Settings' dialog (right-click panel). More advanced settings can
+be made by editing the config file (see 'Advanced' tab in the
+settings dialog). Edit at your own risk! 
+
+Keys and mouse on panel:
+
+mousewheel:				Switch workspace
+=/-, ctrl-mousewheel:	Larger/smaller size
+h/H, shift-mousewheel:	More/less sharpness
+p/P:		Cycle back/forth through color palettes 
+s/S:		More/less saturated colors in panel
+c:			Pop up config dialog
+r:			Save layout (after moving buttons etc)
+n:			Toggle between 4 and 8 colors mode
+esc:		Close all drawers
+ctrl-c:		Exit program
+ctrl-r: 	Restart
+0: 			Resize panel to unscaled 'original' size
+
+Mousewheel over pavucontrol icon: change speaker volume.
+Mouse at bottom of the screen raises the panel window above all
+others.
+
+
+## Theme Management
+
+### Theme Customization Methods
+
+#### 1. Modern Theming System (Recommended)
+The new theming system provides better performance and reliability:
+
+- **GUI Configuration**: Right-click on the panel and select 'Settings'
+- **Config File**: Edit `~/.config/cdetheme/config.ini`
+- **Command Line**: Use `cdepanel --help` for available options
+
+#### 2. Legacy `switchtheme` Script
+For backward compatibility, the original `switchtheme` script is still available:
+
+```bash
+# Basic usage
+./scripts/switchtheme palettes/YourTheme.dp 8 3 20 true true true
+
+# Example: HP-UX style
+./scripts/switchtheme palettes/Broica.dp 8 3 22 true true true
+
+# Example: Solaris style
+./scripts/switchtheme palettes/Crimson.dp 4 3 20 true true true
+```
+
+**Note**: While still functional, the `switchtheme` script is considered legacy. New features and improvements will focus on the modern theming system.
+
+### Migrating from switchtheme to the New System
+
+If you were previously using `switchtheme`, you can migrate your settings:
+
+1. Your existing themes in `~/.themes/cdetheme/` will continue to work
+2. The new system will automatically detect and use these themes
+3. For new themes, consider using the modern theming system for better performance and features
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `CDE_THEME` | Theme name to use | `default` |
+| `CDE_CACHE_DIR` | Cache directory | `~/.cache/cdetheme` |
+| `GTK_THEME` | GTK theme to use | `CDE` |
+| `QT_QPA_PLATFORMTHEME` | Qt platform theme | `qt5ct` |
+
+## Qt5 Support
+
+For Qt5 applications to use the CDE theme, install qt5ct and configure it:
+
+1. Install qt5ct and Qt5 style plugins:
+   sudo apt install qt5ct qt5-style-plugins
+
+2. Set the environment variable in your ~/.bashrc:
+   export QT_QPA_PLATFORMTHEME=qt5ct
+
+3. Run qt5ct and select "gtk+" as the style to match the GTK theme
+
+This will make Qt5 applications use the same visual style as GTK applications.
+
+## Troubleshooting
+
+### Theme Compatibility
+
+#### Using switchtheme with the New System
+- Themes created with `switchtheme` are fully compatible with the new system
+- The new system adds caching and better error handling for these themes
+- When using both systems, the new system's settings will take precedence
+
+### Common Issues
+
+1. **Theme not applying**
+   - Ensure all dependencies are installed
+   - Check logs in `~/.cache/cdetheme/cdepanel.log`
+   - Try running with `--debug` flag for more verbose output
+
+2. **Missing Icons**
+   - Install the required icon theme
+   - Check icon theme path in settings
+
+3. **Performance Issues**
+   - Clear cache: `rm -rf ~/.cache/cdetheme/*`
+   - Disable unnecessary theme components
+
+## Legacy Documentation
+
+### switchtheme Reference
+
+#### Usage
+```
+./switchtheme paletteFile nrOfColors borderWidth titleHeight useWindowDecorations useGtkTheme useBackDrops
+```
+
+#### Arguments
+- `paletteFile`: Path to CDE color palette (e.g., `palettes/Broica.dp`)
+- `nrOfColors`: Number of colors (4 or 8)
+- `borderWidth`: Window border width in pixels
+- `titleHeight`: Window title bar height in pixels
+- `useWindowDecorations`: `true`/`false` to apply window decorations
+- `useGtkTheme`: `true`/`false` to apply GTK theme
+- `useBackDrops`: `true`/`false` to apply desktop backgrounds
+
+#### Example Palettes
+- `Broica.dp`: Classic HP-UX style
+- `Crimson.dp`: Solaris-inspired theme
+- `Africa.dp`: Earth tones
+- `Alpine.dp`: Cool blue tones
+
+## Additional Information
+
+If you want to get rid of the new client side decorations windows
+and draw normal Motif style window decorations always, please 
+
+sudo apt install gtk3-nocsd
+
+and set 
+
+  export GTK_CSD=0
+  export LD_PRELOAD=<"full path" of your libgtk3-nocsd.so.0 file>
+
+in your .bashrc. I'm looking for a better solution for this, 
+but yes...
+

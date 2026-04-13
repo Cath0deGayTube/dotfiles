@@ -1,0 +1,13 @@
+[Desktop Entry]
+#FOR PYINSTALLER
+Version=1.0
+Type=Application
+Name=cdepanel
+GenericName=Cde Panel
+Comment=Cde Panel Emulator
+Exec=cdepanel.py
+TryExec=cdepanel.py
+Icon=cdetheme
+Terminal=false
+Categories=Utility;
+StartupNotify=true

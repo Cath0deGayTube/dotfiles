@@ -1,0 +1,25 @@
+0
+2
+PersAppsSubpanel	LXTerminal
+Mail	Waterfox
+19
+~/.dt/types/fp_dynamic/Mail1.fp Mail 2 Mail 4 0
+~/.dt/types/fp_dynamic/Home1.fp Home 2 Home 4 0
+~/.dt/types/fp_dynamic/Waterfox1.fp Waterfox 4 Mail 2 0
+~/.dt/types/fp_dynamic/School_W1.fp School_Waterfox 4 Mail 2 0
+~/.dt/types/fp_dynamic/Thunderb1.fp Thunderbird 4 Mail 2 0
+~/.dt/types/fp_dynamic/Element1.fp Element 4 Mail 2 0
+~/.dt/types/fp_dynamic/Clock1.fp Clock 2 Clock 4 0
+~/.dt/types/fp_dynamic/Dtcalc1.fp Dtcalc 4 Clock 2 0
+~/.dt/types/fp_dynamic/Dtcreate1.fp Dtcreate 4 Clock 2 0
+~/.dt/types/fp_dynamic/Dticon1.fp Dticon 4 Clock 2 0
+~/.dt/types/fp_dynamic/Dtmanpag1.fp Dtmanpageview 4 Clock 2 0
+~/.dt/types/fp_dynamic/PCManFM1.fp PCManFM 4 Home 2 0
+~/.dt/types/fp_dynamic/Dtpad1.fp Dtpad 4 Home 2 0
+~/.dt/types/fp_dynamic/LXTermin1.fp LXTerminal 4 PersAppsSubpanel 2 0
+~/.dt/types/fp_dynamic/Term1.fp Term 4 PersAppsSubpanel 2 1
+~/.dt/types/fp_dynamic/IconEdit1.fp IconEditor 4 PersAppsSubpanel 2 1
+~/.dt/types/fp_dynamic/Steam1.fp Steam 4 Mail 2 0
+~/.dt/types/fp_dynamic/Discord_1.fp Discord_(Web) 4 Mail 2 0
+~/.dt/types/fp_dynamic/Neovide1.fp Neovide 4 PersAppsSubpanel 2 0
+1

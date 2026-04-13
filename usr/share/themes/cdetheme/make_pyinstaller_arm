@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+# ARM-aware PyInstaller build script for cdepanel
+#
+# On ARM (aarch64, armv7l), PyInstaller can build a native ARM binary
+# if PyInstaller and all dependencies are installed on the ARM device.
+# If PyInstaller is not available, the startpanel script will fall back
+# to running the Python source directly.
+#
+
+ARCH=$(uname -m)
+echo "Building cdepanel for architecture: $ARCH"
+
+# Check if PyInstaller is available
+if ! command -v pyinstaller &> /dev/null; then
+    echo "PyInstaller not found. On ARM, you can either:"
+    echo "  1. Install PyInstaller: pip3 install pyinstaller"
+    echo "  2. Run the Python source directly via ./startpanel (recommended for ARM)"
+    echo ""
+    echo "The startpanel script will automatically detect ARM and run"
+    echo "the Python source directly without needing a compiled binary."
+    exit 0
+fi
+
+# Determine library path prefix based on architecture
+if [ "$ARCH" = "aarch64" ]; then
+    LIB_PREFIX="/usr/lib/aarch64-linux-gnu"
+elif [ "$ARCH" = "armv7l" ] || [ "$ARCH" = "armhf" ]; then
+    LIB_PREFIX="/usr/lib/arm-linux-gnueabihf"
+elif [ "$ARCH" = "x86_64" ]; then
+    LIB_PREFIX="/usr/lib/x86_64-linux-gnu"
+else
+    LIB_PREFIX="/usr/lib"
+fi
+
+echo "Using library prefix: $LIB_PREFIX"
+
+# Build with PyInstaller
+pyinstaller -F cdetheme/scripts/cdepanel.py \
+--add-data cdetheme:cdetheme \
+#--hidden-import=pynput.keyboard._xorg \
+#--hidden-import=pynput.mouse._xorg
+
+# Copy the built binary to the project root
+if [ -f "dist/cdepanel" ]; then
+    # Rename existing binary if present (backup)
+    if [ -f "cdepanel" ]; then
+        mv cdepanel "cdepanel.bak.$(date +%Y%m%d%H%M%S)"
+        echo "Backed up existing cdepanel binary"
+    fi
+    
+    cp dist/cdepanel .
+    echo "Built cdepanel binary for $ARCH"
+    
+    # Clean up build artifacts
+    rm -rf dist build
+    echo "Cleaned up build artifacts"
+else
+    echo "ERROR: PyInstaller build failed - no binary produced"
+    echo "You can still run the panel using ./startpanel which will"
+    echo "execute the Python source directly on ARM."
+    exit 1
+fi
+
+echo ""
+echo "Build complete. Binary: ./cdepanel ($ARCH)"
+echo "You can also use ./startpanel which auto-detects architecture."

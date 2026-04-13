@@ -1,0 +1,25 @@
+*XmTextField*FontList:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*0*ColorPalette:	dtUhAjQK.dp
+Dtwm*0*FrontPanel*geometry:	-445-0
+Dtwm*0*ws0*backdrop*image:	NoBackdrop
+Dtwm*0*ws0*backdrop*imageType:	0
+Dtwm*0*helpResources:	\n\
+  
+Dtwm*0*initialWorkspace:	ws0
+Dtwm*0*workspaceCount:	4
+Dtwm*moveOpaque:	True
+*XmText*FontList:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*DtEditor*textFontList:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+dtsession*extension.saverList:	StartDtscreenFlame StartDtscreenQix 
+dtsession*displayResolution:	3785
+dtsession*sessionLanguage:	en_CA.UTF-8
+*textFontList:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*userFont:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*Font:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*
+*FontList:	-dt-interface system-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*background:	#BCBCBCBCBCBC
+*foreground:	#000000000000
+*FontSet:	-dt-interface user-medium-r-normal-l*-*-*-*-*-*-*-*-*
+*buttonFontList:	-dt-interface system-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*systemFont:	-dt-interface system-medium-r-normal-l*-*-*-*-*-*-*-*-*:
+*labelFontList:	-dt-interface system-medium-r-normal-l*-*-*-*-*-*-*-*-*:
