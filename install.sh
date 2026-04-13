@@ -97,6 +97,9 @@ cp -rf "$CLONEDIR/home/user/.dt" "$HOME/.dt"
 # Copy twm config
 cp -f "$CLONEDIR/home/user/.twmrc" "$HOME/.twmrc"
 
+# Copy twm icons
+cp -rf "$CLONEDIR/usr/include/X11/bitmaps" "/usr/include/X11/"
+
 # Copy keybinds
 cp -f "$CLONEDIR/home/user/.xbindkeysrc" "$HOME/.xbindkeysrc"
 

@@ -22,9 +22,10 @@ cd dotfiles
 ## Credits
 
 > [!NOTE]
-> Both these GTK/icon themes included in repo, since gnome-look doesn't provide
+> First 2 GTK/icon themes included in repo, since gnome-look doesn't provide
 > a good way to directly download files in a script.
 
 - [CDE / Motif theme for Xfce / Gtk etc](https://www.gnome-look.org/p/1231025/)
 - [CDE-Reborn icon theme](https://www.gnome-look.org/p/1920644)
 - [CDE colour scheme from FreeBSD forums](https://forums.freebsd.org/threads/setting-up-common-desktop-environment-for-modern-use.69475/)
+- [Configurations for ctwm (and twm) (used for window decoration buttons)](https://datagubbe.se/twm/)

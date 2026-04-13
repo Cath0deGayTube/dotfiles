@@ -16,6 +16,13 @@ ResizeFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
 MenuFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
 IconFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
 IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
+RandomPlacement
+
+NoDefaults
+LeftTitleButton   "close.xbm" = f.menu "winmops"
+RightTitleButton  "minimize.xbm" = f.iconify
+RightTitleButton "vertmax.xbm"   = f.zoom
+RightTitleButton "resiz2.xbm"    = f.resize
 #ClientBorderWidth
 
 Color
