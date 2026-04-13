@@ -4,7 +4,7 @@
 nitrogen --restore &
 
 # Status bar
-i3status | dzen2 -x 0 -y 0 -w 1920 -h 24 -ta l
+i3status | dzen2 -x 0 -y 0 -w 1920 -h 24 -ta l &
 
 # Hotkeys
 xbindkeys &
