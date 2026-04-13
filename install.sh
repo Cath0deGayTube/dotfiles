@@ -78,7 +78,7 @@ if [ ! -d /usr/dt ]; then
 fi
 
 # Install programs
-yay -S hyfetch fastfetch neovide neovim picom rofi ripgrep waterfox-bin lxterminal pcmanfm xorg-twm nitrogen wmbattery wmsysmon xorg-xclock xbindkeys || {
+yay -S hyfetch fastfetch neovide neovim picom rofi ripgrep waterfox-bin lxterminal pcmanfm xorg-twm nitrogen xbindkeys dzen2 i3bar || {
   echo "Dependencies installation failed! Exiting..."
   exit 1
 }
