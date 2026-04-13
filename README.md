@@ -29,3 +29,4 @@ cd dotfiles
 - [CDE-Reborn icon theme](https://www.gnome-look.org/p/1920644)
 - [CDE colour scheme from FreeBSD forums](https://forums.freebsd.org/threads/setting-up-common-desktop-environment-for-modern-use.69475/)
 - [Configurations for ctwm (and twm) (used for window decoration buttons)](https://datagubbe.se/twm/)
+- [Graham's TWM page! (Used for colour scheme)](https://www.cpcnw.co.uk/twm/twmrc.htm)

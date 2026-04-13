@@ -19,9 +19,9 @@ IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
 RandomPlacement
 
 NoDefaults
-LeftTitleButton   "close.xbm" = f.menu "winmops"
+LeftTitleButton   "close.xbm" = f.delete
 RightTitleButton  "minimize.xbm" = f.iconify
-RightTitleButton "vertmax.xbm"   = f.zoom
+RightTitleButton "vertmax.xbm"   = f.fullzoom
 RightTitleButton "resiz2.xbm"    = f.resize
 #ClientBorderWidth
 
